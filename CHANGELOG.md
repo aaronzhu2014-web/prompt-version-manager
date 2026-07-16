@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+- Added a custom macOS application icon inspired by stacked Prompt versions.
+
 ## 1.0.0
 
 - Rebuilt the desktop application with Swift 6 and SwiftUI.

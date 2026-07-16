@@ -18,11 +18,11 @@ Prompt Version Manager is built with Swift 6, SwiftUI, and the system SQLite lib
 ## Requirements
 
 - macOS 13 or later
-- Apple Silicon for the prebuilt v1.0.0 release
+- Apple Silicon for the prebuilt v1.0.1 release
 
 ## Install
 
-Download `Prompt-Version-Manager-v1.0.0-macos-arm64.zip` from the GitHub Releases page, unzip it, and move `Prompt Version Manager.app` to Applications.
+Download `Prompt-Version-Manager-v1.0.1-macos-arm64.zip` from the GitHub Releases page, unzip it, and move `Prompt Version Manager.app` to Applications.
 
 The release uses local ad-hoc signing rather than an Apple Developer ID. Depending on macOS security settings, the first launch may require Control-clicking the app and choosing Open.
 
@@ -43,7 +43,7 @@ Prompt Version Manager.app
 Create a distributable ZIP:
 
 ```bash
-./scripts/package_release.sh 1.0.0
+./scripts/package_release.sh 1.0.1
 ```
 
 Run the Swift core checks:
@@ -100,6 +100,7 @@ Sources/
 └── PromptVersionCoreChecks/  Dependency-free executable checks
 
 Packaging/                    macOS bundle metadata
+Assets/                       Application icon source and macOS icon bundle
 scripts/                      Build, check, and release packaging
 examples/                     Synthetic import example
 ```
