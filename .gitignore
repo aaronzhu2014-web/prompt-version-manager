@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.db
+*.db-wal
+*.db-shm
+.pytest_cache/
+.cache/
+.build/
+.venv/
+build/
+dist/
+*.app/
+*.zip
+*.egg-info/
+logs/desktop-launch.log

@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  build-and-check:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Swift core checks
+        run: ./scripts/check_swift.sh
+
+      - name: Build release app
+        run: ./scripts/package_release.sh 1.0.0
+
+      - name: Verify native bundle
+        run: |
+          file "Prompt Version Manager.app/Contents/MacOS/prompt-version-manager" | grep "Mach-O"
+          plutil -lint "Prompt Version Manager.app/Contents/Info.plist"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Prompt-Version-Manager-macos-arm64
+          path: dist/Prompt-Version-Manager-v1.0.0-macos-arm64.zip
